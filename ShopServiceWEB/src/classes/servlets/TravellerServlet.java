@@ -24,12 +24,18 @@ public class TravellerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);
-        session.setAttribute("traveller", "1");
+        if(session.getAttribute("traveller")!=null){
+            request.getRequestDispatcher("/app/traveller.jsp").forward(request,response);
+        }
+        else {
+            session.setAttribute("traveller", "1");
 
-        ServletContext servletContext=getServletContext();
-        int counter= Integer.parseInt((String) servletContext.getAttribute("traveller-counter")) ;
-        counter++;
-        servletContext.setAttribute("traveller-counter",counter+"");
-        request.getRequestDispatcher("/app/traveller.jsp").forward(request,response);
+            ServletContext servletContext=getServletContext();
+            int counter= Integer.parseInt((String) servletContext.getAttribute("traveller-counter")) ;
+            counter++;
+            servletContext.setAttribute("traveller-counter",counter+"");
+            request.getRequestDispatcher("/app/traveller.jsp").forward(request,response);
+        }
+
     }
 }

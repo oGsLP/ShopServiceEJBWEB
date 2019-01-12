@@ -32,10 +32,12 @@ public class CounterListener implements ServletContextListener,
          initialized(when the Web application is deployed). 
          You can initialize servlet context related data here.
       */
+        System.out.println("counter_listener_initialize");
         try {
             BufferedReader br=new BufferedReader(new FileReader(counterPath));
             userCounter=Integer.parseInt(br.readLine());
             travellerCounter=Integer.parseInt(br.readLine());
+            System.out.println("--"+userCounter+"user(s) --"+travellerCounter+"traveller(s) --");
             br.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -59,11 +61,15 @@ public class CounterListener implements ServletContextListener,
         writeCounter(scab);
     }
 
-    public synchronized void writeCounter(ServletContextAttributeEvent scab){
+    private synchronized void writeCounter(ServletContextAttributeEvent scab){
         ServletContext servletContext=scab.getServletContext();
+        userCounter=servletContext.getAttribute("user-counter")!=null
+                ?Integer.parseInt((String) servletContext.getAttribute("user-counter")):0;
+        travellerCounter=servletContext.getAttribute("traveller-counter")!=null
+                ?Integer.parseInt((String) servletContext.getAttribute("traveller-counter")):0;
 //        userCounter=Integer.parseInt((String) servletContext.getAttribute("user-counter"));
 //        travellerCounter=Integer.parseInt((String) servletContext.getAttribute("traveller-counter"));
-        userCounter=1;travellerCounter=1;
+        System.out.println("sum_user_and_traveller_change");
         try {
             BufferedWriter bw=new BufferedWriter(new FileWriter(counterPath));
             bw.write(""+userCounter+"\n");
