@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="ShopServiceEJB:ejb exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ShopServiceEJB_ejb_exploded.rar</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ShopServiceEJB/ejb/EJB" />
+      <element id="module-output" name="ShopServiceEJB" />
+    </root>
+  </artifact>
+</component>

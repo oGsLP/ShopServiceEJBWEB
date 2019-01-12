@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ShopServiceEJB/ShopServiceEJB.iml" filepath="$PROJECT_DIR$/ShopServiceEJB/ShopServiceEJB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShopServiceEJBWEB.iml" filepath="$PROJECT_DIR$/ShopServiceEJBWEB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShopServiceWEB/ShopServiceWEB.iml" filepath="$PROJECT_DIR$/ShopServiceWEB/ShopServiceWEB.iml" />
+    </modules>
+  </component>
+</project>

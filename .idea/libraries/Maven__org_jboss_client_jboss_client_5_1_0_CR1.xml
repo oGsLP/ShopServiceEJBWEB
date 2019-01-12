@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Maven: org.jboss.client:jboss-client:5.1.0.CR1">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/client/jboss-client/5.1.0.CR1/jboss-client-5.1.0.CR1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/client/jboss-client/5.1.0.CR1/jboss-client-5.1.0.CR1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
