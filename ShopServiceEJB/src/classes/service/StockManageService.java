@@ -3,7 +3,7 @@ package classes.service;
 import classes.entities.Goods;
 
 import javax.ejb.Remote;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @你大爷: XYF
@@ -36,7 +36,7 @@ public interface StockManageService {
      * 返回goods列表
      * @return
      */
-    ArrayList<Goods> getStock();
+    List getStock();
 
     /**
      * 增加一个goods

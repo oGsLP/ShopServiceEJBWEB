@@ -1,6 +1,5 @@
 package classes.servlets;
 
-import classes.entities.Goods;
 import classes.service.StockManageService;
 import classes.helper.JSONHelper;
 
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @你大爷: XYF
@@ -30,7 +29,7 @@ public class ListLayoutServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<Goods> goods= stockManageService.getStock();
+        List goods= stockManageService.getStock();
         String goods_Json = JSONHelper.toJson(goods);
         System.out.println("Find "+goods.size()+" goods");
         request.setAttribute("stock_list",goods_Json);

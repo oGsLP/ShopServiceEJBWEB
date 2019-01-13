@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+    <!--
+    persistence-unit name="EjbXmlMappingsPU" // 持久化单元名
+    transaction-type="JTA(default)/RESOURCE_LOCAL" // 事务类型
+    -->
+    <persistence-unit name="161250161_j2e">
+        <description>
+            j2e persistence
+        </description> <!-- 描述 -->
+        <!--<provider>oracle.toplink.essentials.PersistenceProvider</provider> &lt;!&ndash; 指定一个持久化提供者 &ndash;&gt;-->
+        <jta-data-source>java:/MySqlDS</jta-data-source> <!-- 指定JTA数据源 -->
+        <!--<non-jta-data-source>java:/MySqlDS</non-jta-data-source> &lt;!&ndash; 指定非JTA数据源 &ndash;&gt;-->
+        <!--<mapping-file>META-INF/my_queries.xml</mapping-file> &lt;!&ndash; 指定映射文件 &ndash;&gt;-->
+        <!--<mapping-file>META-INF/my_entities.xml</mapping-file>-->
+        <!--<jar-file>my/my-classes.jar</jar-file> &lt;!&ndash; 指定托管类的附加JAR &ndash;&gt;-->
+        <!--<class>myclass1</class> &lt;!&ndash; 明确列出的类 &ndash;&gt;-->
+        <!--<class>myclass2</class>-->
+        <!--<exclude-unlisted-classes/> &lt;!&ndash; 使本地类不能被加到持久化单元中 &ndash;&gt;-->
+        <properties><!-- 使用提供者属性 -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>

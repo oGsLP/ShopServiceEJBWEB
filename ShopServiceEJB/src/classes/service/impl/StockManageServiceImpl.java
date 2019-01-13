@@ -2,12 +2,11 @@ package classes.service.impl;
 
 import classes.dao.StockDao;
 import classes.entities.Goods;
-import classes.factory.DaoFactory;
 import classes.service.StockManageService;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @你大爷: XYF
@@ -39,7 +38,7 @@ public class StockManageServiceImpl implements StockManageService {
     }
 
     @Override
-    public ArrayList<Goods> getStock() {
+    public List getStock() {
         return stockDao.getStock();
     }
 
